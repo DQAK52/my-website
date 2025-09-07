@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #000000;
+        }
+
+        img {
+            width: 350px;
+            height: 100%;
+        }
+
+        .text {
+            display: flex;
+            bottom: 50px;
+            text-align: center;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        .button p {
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .button{
+            width: 200px;
+            height: 100px;
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="lamp">
+        <img src="assets/bulb-off.png" alt="" class="img">
+    </div>
+    <div class="button">
+            <p class="text">Turn on</p>
+    </div>
+    <script>
+        const text = document.querySelector(".text");
+        const button = document.querySelector(".button");
+        const image = document.querySelector(".img");
+        
+        let isOn = false;
+        
+        button.addEventListener("click", () => {
+            if (isOn == false) {
+                text.textContent = "Turn off";
+                image.src = "assets/bulb-on.png";
+                isOn = true;
+            } else {
+                text.textContent = "Turn on";
+                image.src = "assets/bulb-off.png";
+                isOn = false;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
